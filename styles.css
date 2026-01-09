@@ -1,24 +1,24 @@
 :root{
-  /* === Palette douce / luxe — BOURGOGNE SIGNATURE === */
-  --bg: #fbf6ef;                 /* ivoire */
-  --bg2: #f0e2d1;                /* beige chaud */
+  /* === Palette (bourgogne signature, doux, luxe) === */
+  --bg: #fbf3ea;                 /* ivoire chaud */
+  --bg2: #eddcca;                /* beige velours */
   --paper: rgba(255,255,255,.80);
   --paper2: rgba(255,255,255,.66);
 
-  --burgundy: #8a2440;           /* principal (plus présent) */
+  --burgundy: #8a2440;           /* principal (présent) */
   --burgundy2: #65172e;          /* profondeur */
   --gold: #c9a45a;               /* doré discret */
   --gold2: #a9823d;
 
-  --ink: #191317;                /* noir accent (rare) */
-  --text: #2a1c22;               /* texte doux */
+  --ink: #171216;                /* noir accent (rare) */
+  --text: #2a1c22;
   --muted: rgba(42,28,34,.68);
 
-  --stroke: rgba(138,36,64,.20);
+  --stroke: rgba(138,36,64,.22);
   --stroke2: rgba(201,164,90,.18);
 
-  --shadow: 0 18px 45px rgba(25,19,23,.12);
-  --shadow2: 0 10px 28px rgba(25,19,23,.10);
+  --shadow: 0 18px 45px rgba(23,18,22,.12);
+  --shadow2: 0 10px 28px rgba(23,18,22,.10);
 
   --radius: 18px;
   --radius2: 26px;
@@ -35,16 +35,17 @@ body{
   font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   color: var(--text);
   background:
-    radial-gradient(1100px 640px at 14% 10%, rgba(138,36,64,.22), transparent 62%),
+    radial-gradient(1200px 680px at 18% 12%, rgba(138,36,64,.34), transparent 62%),
+    radial-gradient(980px 520px at 82% 16%, rgba(138,36,64,.20), transparent 60%),
     radial-gradient(900px 520px at 88% 14%, rgba(201,164,90,.16), transparent 58%),
-    linear-gradient(180deg, var(--bg) 0%, var(--bg2) 60%, #ead8c4 100%);
+    linear-gradient(180deg, var(--bg) 0%, var(--bg2) 60%, #e6d0bb 100%);
   overflow-x:hidden;
 }
 
 .muted{ color: var(--muted); }
 .mono{ font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; }
 
-/* Ornement fond (plus bourgogne) */
+/* Ornement fond */
 .bg-ornament{
   position: fixed;
   inset:-40vh -20vw auto -20vw;
@@ -54,11 +55,11 @@ body{
   pointer-events:none;
   background:
     radial-gradient(closest-side, rgba(201,164,90,.18), transparent 70%),
-    radial-gradient(closest-side, rgba(138,36,64,.22), transparent 70%);
+    radial-gradient(closest-side, rgba(138,36,64,.26), transparent 70%);
   transform: rotate(-8deg);
 }
 
-/* === Header === */
+/* === Header (sans monogramme image) === */
 .site-header{
   position: sticky;
   top: 0;
@@ -68,7 +69,7 @@ body{
   justify-content:space-between;
   padding: 14px 16px;
   border-bottom: 2px solid rgba(138,36,64,.28);
-  background: rgba(251,246,239,.86);
+  background: rgba(251,243,234,.88);
   backdrop-filter: blur(10px);
 }
 
@@ -80,36 +81,26 @@ body{
   min-width: 240px;
 }
 
-/* Conteneur monogramme */
 .brand-mark{
-  width: 52px;
-  height: 52px;
+  width: 48px;
+  height: 48px;
   display:grid;
   place-items:center;
-  border-radius: 18px;
+  border-radius: 16px;
   background:
-    radial-gradient(120% 120% at 20% 20%, rgba(138,36,64,.26), transparent 55%),
-    linear-gradient(135deg, rgba(138,36,64,.20), rgba(201,164,90,.14));
-  border: 1px solid rgba(138,36,64,.22);
+    linear-gradient(135deg, rgba(138,36,64,.14), rgba(201,164,90,.10));
+  border: 1px solid rgba(138,36,64,.18);
   box-shadow: var(--shadow2);
-  overflow: hidden;
 }
 
-/* Ton image monogramme (PNG transparent) */
-.brand-logo{
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  padding: 8px;
-  display:block;
-}
+.brand-mark--text{ overflow: hidden; }
 
-/* Si tu gardes du texte (DÉ) à la place du logo */
 .brand-mark-text{
   font-family: "Playfair Display", serif;
   letter-spacing:.06em;
   color: var(--burgundy2);
-  font-weight: 600;
+  font-weight: 700;
+  font-size: 1.05rem;
 }
 
 .brand-text{ display:flex; flex-direction:column; line-height:1.1; }
@@ -136,7 +127,7 @@ body{
 .main-nav a{
   padding: 10px 10px;
   border-radius: 12px;
-  color: rgba(42,28,34,.80);
+  color: rgba(42,28,34,.82);
   transition: background .15s ease, transform .15s ease, color .15s ease;
 }
 
@@ -156,7 +147,7 @@ body{
 .nav-toggle{
   display:none;
   border:0;
-  background: rgba(255,255,255,.70);
+  background: rgba(255,255,255,.72);
   width: 46px;
   height: 46px;
   border-radius: 16px;
@@ -174,28 +165,57 @@ body{
 
 /* === HERO === */
 .hero{
-  padding: 56px 18px 28px;
+  padding: 70px 18px 28px; /* un peu plus haut pour le sceau */
 }
 
 .hero-inner{
   max-width: var(--max);
   margin: 0 auto;
-  padding: 34px 18px;
+  padding: 62px 18px 34px; /* espace pour le monogramme */
+  position: relative;
   border-radius: var(--radius2);
-  border: 1px solid rgba(138,36,64,.18);
+  border: 1px solid rgba(138,36,64,.20);
   background:
-    radial-gradient(900px 420px at 18% 18%, rgba(138,36,64,.28), transparent 62%),
-    radial-gradient(800px 380px at 82% 24%, rgba(201,164,90,.16), transparent 60%),
-    linear-gradient(180deg, rgba(255,255,255,.74), rgba(255,255,255,.58));
+    radial-gradient(980px 460px at 18% 18%, rgba(138,36,64,.44), transparent 62%),
+    radial-gradient(860px 420px at 78% 26%, rgba(201,164,90,.16), transparent 62%),
+    linear-gradient(180deg, rgba(255,255,255,.76), rgba(255,255,255,.56));
   box-shadow: var(--shadow);
+}
+
+/* Monogramme SEULEMENT dans le HERO (sceau centré) */
+.hero-monogram{
+  position: absolute;
+  top: -52px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 120px;
+  border-radius: 34px;
+  display: grid;
+  place-items: center;
+
+  background:
+    radial-gradient(120% 120% at 30% 25%, rgba(138,36,64,.58), rgba(138,36,64,.22) 55%, rgba(201,164,90,.18) 100%),
+    linear-gradient(135deg, rgba(138,36,64,.28), rgba(201,164,90,.14));
+  border: 2px solid rgba(138,36,64,.30);
+  box-shadow: 0 22px 60px rgba(101,23,46,.22);
+}
+
+.hero-monogram img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 14px;
+  display: block;
 }
 
 .eyebrow{
   margin: 0 0 10px;
-  color: rgba(138,36,64,.82);
+  color: rgba(138,36,64,.85);
   letter-spacing:.16em;
   text-transform: uppercase;
   font-size: .82rem;
+  text-align: center; /* cohérent avec le sceau */
 }
 
 .hero h1{
@@ -235,10 +255,10 @@ body{
 .btn:hover{ transform: translateY(-1px); }
 
 .btn-primary{
-  background: linear-gradient(135deg, rgba(138,36,64,.96), rgba(201,164,90,.30));
-  border-color: rgba(138,36,64,.22);
+  background: linear-gradient(135deg, rgba(138,36,64,.98), rgba(201,164,90,.28));
+  border-color: rgba(138,36,64,.26);
   color: #fff7ee;
-  box-shadow: 0 14px 28px rgba(138,36,64,.18);
+  box-shadow: 0 16px 34px rgba(138,36,64,.22);
 }
 
 .btn-ghost{
@@ -252,7 +272,7 @@ body{
   padding: 14px 14px;
   border-radius: var(--radius);
   border: 1px solid rgba(201,164,90,.20);
-  background: rgba(255,255,255,.60);
+  background: rgba(255,255,255,.62);
 }
 
 .hero-card-row{
@@ -265,8 +285,8 @@ body{
 .pill{
   padding: 8px 10px;
   border-radius: 999px;
-  border: 1px solid rgba(138,36,64,.20);
-  background: rgba(138,36,64,.10);
+  border: 1px solid rgba(138,36,64,.22);
+  background: rgba(138,36,64,.12);
   color: rgba(42,28,34,.84);
   font-size: .88rem;
 }
@@ -276,7 +296,7 @@ body{
   color: rgba(42,28,34,.64);
 }
 
-/* === Sections (voile bourgogne subtil) === */
+/* === Sections (voile bourgogne) === */
 .section{
   padding: 40px 18px;
   position: relative;
@@ -286,7 +306,7 @@ body{
   position:absolute;
   inset: 0;
   pointer-events:none;
-  background: radial-gradient(900px 280px at 18% 10%, rgba(138,36,64,.08), transparent 60%);
+  background: radial-gradient(920px 300px at 18% 10%, rgba(138,36,64,.10), transparent 60%);
   opacity: .95;
 }
 .section-inner{
@@ -296,9 +316,9 @@ body{
 }
 
 .section-alt{
-  background: linear-gradient(180deg, rgba(255,255,255,.52), rgba(240,226,209,.0));
-  border-top: 1px solid rgba(138,36,64,.14);
-  border-bottom: 1px solid rgba(138,36,64,.14);
+  background: linear-gradient(180deg, rgba(255,255,255,.52), rgba(237,220,202,.0));
+  border-top: 1px solid rgba(138,36,64,.16);
+  border-bottom: 1px solid rgba(138,36,64,.16);
 }
 
 .section-head{ margin-bottom: 16px; }
@@ -327,8 +347,8 @@ body{
 
 .card{
   border-radius: var(--radius);
-  background: rgba(255,255,255,.78);
-  border: 1px solid rgba(138,36,64,.14);
+  background: rgba(255,255,255,.80);
+  border: 1px solid rgba(138,36,64,.16);
   box-shadow: var(--shadow2);
   padding: 16px;
 }
@@ -359,10 +379,10 @@ body{
   margin:0;
   border-radius: 16px;
   overflow:hidden;
-  border: 1px solid rgba(138,36,64,.16);
-  background: rgba(255,255,255,.62);
+  border: 1px solid rgba(138,36,64,.18);
+  background: rgba(255,255,255,.64);
   position: relative;
-  box-shadow: 0 10px 26px rgba(25,19,23,.08);
+  box-shadow: 0 10px 26px rgba(23,18,22,.08);
   cursor: zoom-in;
 }
 
@@ -370,7 +390,7 @@ body{
   content:"";
   position:absolute;
   inset:0;
-  background: linear-gradient(180deg, transparent, rgba(138,36,64,.16));
+  background: linear-gradient(180deg, transparent, rgba(138,36,64,.18));
   opacity:0;
   transition: opacity .2s ease;
 }
@@ -390,7 +410,7 @@ body{
 .lightbox{
   position: fixed;
   inset: 0;
-  background: rgba(25,19,23,.60);
+  background: rgba(23,18,22,.62);
   display:none;
   align-items:center;
   justify-content:center;
@@ -405,7 +425,7 @@ body{
   max-height: 78vh;
   border-radius: 18px;
   border: 1px solid rgba(201,164,90,.22);
-  box-shadow: 0 20px 70px rgba(25,19,23,.45);
+  box-shadow: 0 20px 70px rgba(23,18,22,.45);
   background: rgba(255,255,255,.20);
 }
 
@@ -445,8 +465,8 @@ body{
 
 .video-card{
   border-radius: var(--radius);
-  background: rgba(255,255,255,.78);
-  border: 1px solid rgba(138,36,64,.14);
+  background: rgba(255,255,255,.80);
+  border: 1px solid rgba(138,36,64,.16);
   padding: 12px;
   box-shadow: var(--shadow2);
 }
@@ -454,8 +474,8 @@ body{
 .video-frame{
   border-radius: 16px;
   overflow:hidden;
-  border: 1px solid rgba(138,36,64,.16);
-  background: rgba(255,255,255,.58);
+  border: 1px solid rgba(138,36,64,.18);
+  background: rgba(255,255,255,.60);
 }
 
 .video-card h3{
@@ -488,8 +508,8 @@ label{
 
 input, textarea{
   border-radius: 14px;
-  border: 1px solid rgba(138,36,64,.18);
-  background: rgba(255,255,255,.78);
+  border: 1px solid rgba(138,36,64,.20);
+  background: rgba(255,255,255,.82);
   color: var(--text);
   padding: 12px 12px;
   outline: none;
@@ -500,7 +520,7 @@ input::placeholder, textarea::placeholder{
 }
 
 input:focus, textarea:focus{
-  border-color: rgba(201,164,90,.40);
+  border-color: rgba(201,164,90,.42);
   box-shadow: 0 0 0 4px rgba(201,164,90,.14);
 }
 
@@ -517,7 +537,7 @@ input:focus, textarea:focus{
   margin-top: 10px;
   border-radius: 16px;
   border: 1px solid rgba(201,164,90,.22);
-  background: rgba(255,255,255,.58);
+  background: rgba(255,255,255,.60);
   padding: 12px;
 }
 
@@ -533,7 +553,7 @@ input:focus, textarea:focus{
   align-items: baseline;
   justify-content: space-between;
   gap: 14px;
-  border-top: 1px solid rgba(138,36,64,.14);
+  border-top: 1px solid rgba(138,36,64,.16);
   padding-top: 16px;
 }
 
@@ -564,9 +584,9 @@ input:focus, textarea:focus{
     flex-direction: column;
     align-items: stretch;
     gap: 6px;
-    background: rgba(251,246,239,.96);
-    border: 1px solid rgba(138,36,64,.18);
-    box-shadow: 0 18px 55px rgba(25,19,23,.18);
+    background: rgba(251,243,234,.96);
+    border: 1px solid rgba(138,36,64,.20);
+    box-shadow: 0 18px 55px rgba(23,18,22,.18);
   }
   .main-nav.open{ display:flex; }
   .main-nav a{ padding: 12px 12px; }
