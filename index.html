@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dame Émanuelle — Élégance & Raffinement</title>
+  <meta name="description" content="Site personnel — élégance, féminité raffinée, galerie et clips courts." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Police chic et lisible -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- Fond décoratif -->
+  <div class="bg-ornament" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Retour en haut">
+      <span class="brand-mark" aria-hidden="true">DÉ</span>
+      <span class="brand-text">
+        <span class="brand-name">Dame Émanuelle</span>
+        <span class="brand-tag">Classe • Féminité • Raffinement</span>
+      </span>
+    </a>
+
+    <button class="nav-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="main-nav" aria-label="Navigation principale">
+      <a href="#apropos">À propos</a>
+      <a href="#galerie">Galerie</a>
+      <a href="#videos">Clips</a>
+      <a href="#contact">Contact</a>
+      <a class="nav-cta" href="#contact">Me joindre</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-inner">
+        <p class="eyebrow">Signature personnelle</p>
+        <h1>Une présence élégante, une esthétique noble.</h1>
+        <p class="hero-lead">
+          Un espace sobre et luxueux, inspiré d’une féminité raffinée : bourgogne profond,
+          or discret, beige velours et noir intense.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#galerie">Voir la galerie</a>
+          <a class="btn btn-ghost" href="#videos">Regarder les clips</a>
+        </div>
+
+        <div class="hero-card">
+          <div class="hero-card-row">
+            <div class="pill">Bourgogne & Or</div>
+            <div class="pill">Épure luxueuse</div>
+            <div class="pill">Galerie & Vidéos</div>
+          </div>
+          <p class="hero-card-note">
+            Remplace facilement les médias : 8 photos + clips courts (MP4).
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- À PROPOS -->
+    <section id="apropos" class="section">
+      <div class="section-inner">
+        <header class="section-head">
+          <h2>À propos</h2>
+          <p class="section-subtitle">
+            Une présentation claire, cérémonielle et moderne.
+          </p>
+        </header>
+
+        <div class="two-col">
+          <div class="card">
+            <h3>Style & intention</h3>
+            <p>
+              Ici, tout est pensé pour évoquer la classe : contrastes nets, dorure maîtrisée,
+              typographie élégante, et une présence visuelle qui respire.
+            </p>
+            <p class="muted">
+              Astuce : tu peux remplacer “DÉ” par ton monogramme en image (PNG transparent)
+              quand tu le souhaites.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Repères</h3>
+            <ul class="list">
+              <li><strong>Palette :</strong> bourgogne / or / beige / noir</li>
+              <li><strong>Sections :</strong> galerie (8), clips, contact</li>
+              <li><strong>Mobile :</strong> menu compact + grilles adaptatives</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERIE -->
+    <section id="galerie" class="section section-alt">
+      <div class="section-inner">
+        <header class="section-head">
+          <h2>Galerie</h2>
+          <p class="section-subtitle">8 images — format uniforme, sobre et luxueux.</p>
+        </header>
+
+        <div class="gallery" role="list">
+          <!-- Remplace les src par tes vraies images -->
+          <figure class="media" role="listitem">
+            <img src="images/galerie-01.jpg" alt="Galerie photo 1" loading="lazy">
+          </figure>
+          <figure class="media" role="listitem">
+            <img src="images/galerie-02.jpg" alt="Galerie photo 2" loading="lazy">
+          </figure>
+          <figure class="media" role="listitem">
+            <img src="images/galerie-03.jpg" alt="Galerie photo 3" loading="lazy">
+          </figure>
+          <figure class="media" role="listitem">
+            <img src="images/galerie-04.jpg" alt="Galerie photo 4" loading="lazy">
+          </figure>
+          <figure class="media" role="listitem">
+            <img src="images/galerie-05.jpg" alt="Galerie photo 5" loading="lazy">
+          </figure>
+          <figure class="media" role="listitem">
+            <img src="images/galerie-06.jpg" alt="Galerie photo 6" loading="lazy">
+          </figure>
+          <figure class="media" role="listitem">
+            <img src="images/galerie-07.jpg" alt="Galerie photo 7" loading="lazy">
+          </figure>
+          <figure class="media" role="listitem">
+            <img src="images/galerie-08.jpg" alt="Galerie photo 8" loading="lazy">
+          </figure>
+        </div>
+
+        <!-- Lightbox -->
+        <div class="lightbox" aria-hidden="true">
+          <button class="lightbox-close" type="button" aria-label="Fermer">×</button>
+          <img class="lightbox-img" alt="">
+          <p class="lightbox-caption" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIDÉOS -->
+    <section id="videos" class="section">
+      <div class="section-inner">
+        <header class="section-head">
+          <h2>Clips courts</h2>
+          <p class="section-subtitle">
+            Petites vidéos en boucle (MP4). Idéal pour des extraits élégants et contrôlés.
+          </p>
+        </header>
+
+        <div class="videos">
+          <!-- Remplace les src par tes fichiers MP4 -->
+          <article class="video-card">
+            <div class="video-frame">
+              <video
+                controls
+                preload="metadata"
+                playsinline
+                poster="images/video-01-poster.jpg">
+                <source src="videos/clip-01.mp4" type="video/mp4">
+                Votre navigateur ne supporte pas la vidéo.
+              </video>
+            </div>
+            <h3>Clip 01</h3>
+            <p class="muted">Un extrait court, net, esthétique.</p>
+          </article>
+
+          <article class="video-card">
+            <div class="video-frame">
+              <video
+                controls
+                preload="metadata"
+                playsinline
+                poster="images/video-02-poster.jpg">
+                <source src="videos/clip-02.mp4" type="video/mp4">
+              </video>
+            </div>
+            <h3>Clip 02</h3>
+            <p class="muted">Lumière chaude, bourgogne profond.</p>
+          </article>
+
+          <article class="video-card">
+            <div class="video-frame">
+              <video
+                controls
+                preload="metadata"
+                playsinline
+                poster="images/video-03-poster.jpg">
+                <source src="videos/clip-03.mp4" type="video/mp4">
+              </video>
+            </div>
+            <h3>Clip 03</h3>
+            <p class="muted">Détails, matière, allure.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section section-alt">
+      <div class="section-inner">
+        <header class="section-head">
+          <h2>Contact</h2>
+          <p class="section-subtitle">
+            Formulaire prêt (avec validation). Pour l’envoi, tu as 2 options faciles ci-dessous.
+          </p>
+        </header>
+
+        <div class="two-col">
+          <div class="card">
+            <h3>Me contacter</h3>
+
+            <!-- OPTION A (par défaut) : mailto (ouvre l'app mail) -->
+            <form id="contactForm" class="form" action="mailto:tonadresse@email.com" method="post" enctype="text/plain">
+              <label>
+                Nom
+                <input name="Nom" type="text" autocomplete="name" required placeholder="Votre nom">
+              </label>
+
+              <label>
+                Email
+                <input name="Email" type="email" autocomplete="email" required placeholder="votre@email.com">
+              </label>
+
+              <label>
+                Sujet
+                <input name="Sujet" type="text" required placeholder="Objet du message">
+              </label>
+
+              <label>
+                Message
+                <textarea name="Message" rows="6" required placeholder="Écrivez votre message…"></textarea>
+              </label>
+
+              <div class="form-actions">
+                <button class="btn btn-primary" type="submit">Envoyer</button>
+                <button class="btn btn-ghost" type="reset">Effacer</button>
+              </div>
+
+              <p class="form-note muted">
+                Option A (actuelle) : ouvre votre application mail.<br>
+                Option B (recommandée) : Formspree / autre endpoint (voir note sous le formulaire).
+              </p>
+            </form>
+          </div>
+
+          <div class="card">
+            <h3>Option d’envoi recommandée</h3>
+            <p>
+              Pour recevoir les messages directement (sans ouvrir l’app Mail),
+              remplace l’attribut <strong>action</strong> du formulaire par l’URL d’un service
+              (ex : Formspree) ou par ton propre script serveur.
+            </p>
+
+            <div class="code-like">
+              <p><strong>Exemple :</strong></p>
+              <p class="mono">
+                &lt;form action="https://formspree.io/f/XXXX" method="POST"&gt;
+              </p>
+            </div>
+
+            <p class="muted">
+              Je peux te donner la version “Formspree” prête à coller si tu me dis
+              quelle solution tu veux (et si tu as déjà un lien Formspree).
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <p class="footer-brand">Dame Émanuelle</p>
+        <p class="muted">© <span id="year"></span> — Élégance, discrétion, présence.</p>
+      </div>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
